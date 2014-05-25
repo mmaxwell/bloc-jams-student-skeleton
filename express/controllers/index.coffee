@@ -1,5 +1,3 @@
-
-
 exports.collection = (title) ->
   (req, res) ->
     res.render 'album_collection', {title: title}
@@ -26,6 +24,16 @@ exports.user = (title) ->
   (req, res) ->
     res.render 'user', {title: title}
 
-exports.practice = (title) ->
+exports.practiceJade = (title) ->
   (req, res) ->
-    res.render 'practice', {title: title}
+    res.render 'practiceJade', {title: title}
+
+exports.practiceHtml = (title) ->
+  (req, res) ->
+    fs = require 'fs'
+    path = require 'path'
+    qualifiedPath = path.join __dirname, '..', 'views', 'practice.html'
+    fs.readFile qualifiedPath, (err, html) ->
+      res.writeHead 200, {"ContentType": "text/html"}
+      res.write html
+      res.end()

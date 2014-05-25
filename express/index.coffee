@@ -31,7 +31,8 @@ app.get '/collection', controllers.collection()
 app.get '/album', controllers.album('Album View')
 app.get '/test', controllers.test('Mocha Tests')
 app.get '/user', controllers.user('User')
-app.get '/practice', controllers.practice('Practice your HTML')
+app.get '/practice/jade', controllers.practiceJade('Practice your Jade')
+app.get '/practice/html', controllers.practiceHtml('Practice your HTML')
 
 ### Default 404 middleware ###
 app.use controllers.error('Page not found :(', 404)
