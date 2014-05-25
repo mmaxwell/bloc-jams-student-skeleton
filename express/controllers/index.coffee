@@ -26,7 +26,7 @@ exports.user = (title) ->
 
 exports.practiceJade = (title) ->
   (req, res) ->
-    res.render 'practiceJade', {title: title}
+    res.render 'practice', {title: title}
 
 exports.practiceHtml = (title) ->
   (req, res) ->
